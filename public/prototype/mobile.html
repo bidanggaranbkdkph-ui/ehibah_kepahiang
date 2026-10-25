@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prototipe Mobile · E-Hibah Kepahiang</title>
+<link rel="stylesheet" href="mobile.css">
+</head>
+<body>
+<header class="proto-head">
+    <div><b>Prototipe mobile E-Hibah</b><span>Klik tab bawah, tombol, dan kartu untuk berpindah layar. Data contoh — bukan data nyata.</span></div>
+    <nav class="roles" aria-label="Pilih peran">
+        <button data-role="pemohon" class="on">Pemohon</button>
+        <button data-role="opd">OPD</button>
+    </nav>
+</header>
+
+<main class="stage" id="stage">
+
+<!-- ============ 1. BERANDA ============ -->
+<section class="phone" data-screen="home">
+  <div class="notch"></div>
+  <div class="screen">
+    <div class="app-bar"><div class="brand"><svg width="22" height="26" viewBox="0 0 40 48"><path d="M20 1 L38 7 V22 C38 34 30 42 20 47 C10 42 2 34 2 22 V7 Z" fill="#0E9F6E"/><path d="M20 5 L34 10 V22 C34 32 28 38 20 42.5 C12 38 6 32 6 22 V10 Z" fill="#0B2A5B"/><path d="M13 27 L20 14 L27 27 Z" fill="#C9A227"/></svg><b>E-Hibah</b></div><button class="bell" data-go="notif" aria-label="Notifikasi">🔔<i>3</i></button></div>
+    <div class="body">
+      <p class="hello">Selamat datang,<br><b>Budi Santoso</b><small>Yayasan Cahaya Bangsa · Pemohon</small></p>
+      <div class="kpis">
+        <div class="k"><small>Usulan aktif</small><b>3</b></div>
+        <div class="k g"><small>Tersalur</small><b>Rp 70 jt</b></div>
+        <div class="k r"><small>Tenggat LPJ</small><b>9 hari</b></div>
+      </div>
+      <h3>Perlu tindakan Anda</h3>
+      <button class="card tap" data-go="status">
+        <div class="row"><b>Peningkatan Mutu Pendidikan Dasar</b><span class="bd teal">Disalurkan</span></div>
+        <small>EH/2026/DISDIKBUD/0001 · Rp 100.000.000</small>
+        <div class="bar"><i style="width:70%"></i></div><small class="warn">⏰ LPJ jatuh tempo 30 Des 2026 — siapkan laporan</small>
+      </button>
+      <button class="card tap" data-go="upload">
+        <div class="row"><b>Pelatihan Guru Penggerak</b><span class="bd amber">Dikembalikan</span></div>
+        <small>Dokumen "Surat pengesahan PJ" perlu diunggah ulang</small>
+      </button>
+      <div class="card"><div class="row"><b>Pengadaan Alat Peraga PAUD</b><span class="bd gray">Draf</span></div><small>Dokumen 6 dari 9 terpenuhi</small><div class="bar"><i style="width:66%"></i></div></div>
+      <button class="fab" data-go="upload">＋ Usulan baru</button>
+    </div>
+    <nav class="tabbar"><button class="on" data-go="home">🏠<span>Beranda</span></button><button data-go="status">📄<span>Usulan</span></button><button data-go="notif">🔔<span>Notifikasi</span></button><button data-go="lpj">📘<span>LPJ</span></button></nav>
+  </div>
+</section>
+
+<!-- ============ 2. STATUS USULAN ============ -->
+<section class="phone" data-screen="status">
+  <div class="notch"></div>
+  <div class="screen">
+    <div class="app-bar"><button class="back" data-go="home">‹</button><b>Status usulan</b><span></span></div>
+    <div class="body">
+      <div class="card"><b>Peningkatan Mutu Pendidikan Dasar</b><small>EH/2026/DISDIKBUD/0001</small>
+        <div class="row" style="margin-top:.4rem"><span class="bd teal">Disalurkan</span><span class="bd gray">Hibah Uang</span></div></div>
+      <ol class="tl">
+        <li class="done"><b>Diajukan</b><small>12 Mar 2026 · Budi Santoso</small></li>
+        <li class="done"><b>Verifikasi administrasi</b><small>15 Mar · Siti Aminah (OPD) — lulus</small></li>
+        <li class="done"><b>Verifikasi teknis</b><small>20 Mar · Tim Verifikasi — skor 83</small></li>
+        <li class="done"><b>Direkomendasi</b><small>22 Mar · No. 900/214/DISDIKBUD/2026</small></li>
+        <li class="done"><b>Ditetapkan Bupati</b><small>15 Jun · Kep. 188.45/KEP/BUP/2026</small></li>
+        <li class="done"><b>NPHD ditandatangani</b><small>2 Jul · Kepala Dinas & Ketua Yayasan</small></li>
+        <li class="now"><b>Disalurkan — Tahap I (70%)</b><small>10 Jul · SP2D-LS/4821 · Rp 70.000.000</small></li>
+        <li><b>LPJ & tahap II (30%)</b><small>menunggu laporan tahap I</small></li>
+      </ol>
+      <button class="btn" data-go="lpj">Susun laporan tahap I</button>
+    </div>
+    <nav class="tabbar"><button data-go="home">🏠<span>Beranda</span></button><button class="on" data-go="status">📄<span>Usulan</span></button><button data-go="notif">🔔<span>Notifikasi</span></button><button data-go="lpj">📘<span>LPJ</span></button></nav>
+  </div>
+</section>
+
+<!-- ============ 3. UNGGAH DOKUMEN ============ -->
+<section class="phone" data-screen="upload">
+  <div class="notch"></div>
+  <div class="screen">
+    <div class="app-bar"><button class="back" data-go="home">‹</button><b>Dokumen wajib</b><span></span></div>
+    <div class="body">
+      <div class="card"><div class="row"><b>Kelengkapan</b><span class="bd amber">7 / 9</span></div><div class="bar"><i style="width:78%"></i></div><small>Lengkapi dokumen bertanda * sebelum mengajukan.</small></div>
+      <div class="doc ok"><span>✔</span><div><b>Proposal *</b><small>proposal.pdf · v2 · 1,2 MB</small></div><em>Sesuai</em></div>
+      <div class="doc ok"><span>✔</span><div><b>RAB *</b><small>rab.pdf · v1</small></div><em>Menunggu</em></div>
+      <div class="doc bad"><span>!</span><div><b>Surat pengesahan penanggung jawab *</b><small>Catatan OPD: tanda tangan tidak terbaca</small></div><em>Ulangi</em></div>
+      <div class="doc miss"><span>＋</span><div><b>Surat keterangan domisili *</b><small>Wajib · berlaku s.d.</small></div><em>Belum</em></div>
+      <div class="upl">
+        <button class="btn out" id="cam">📷 Foto dokumen</button><button class="btn out">📎 Pilih berkas</button>
+        <small>PDF / JPG / PNG · maks. 5 MB · versi lama tetap tersimpan</small>
+      </div>
+      <button class="btn" id="submitBtn">Ajukan usulan</button>
+      <p class="hint" id="hint">Tombol aktif setelah seluruh dokumen wajib terpenuhi.</p>
+    </div>
+    <nav class="tabbar"><button data-go="home">🏠<span>Beranda</span></button><button class="on" data-go="status">📄<span>Usulan</span></button><button data-go="notif">🔔<span>Notifikasi</span></button><button data-go="lpj">📘<span>LPJ</span></button></nav>
+  </div>
+</section>
+
+<!-- ============ 4. NOTIFIKASI ============ -->
+<section class="phone" data-screen="notif">
+  <div class="notch"></div>
+  <div class="screen">
+    <div class="app-bar"><button class="back" data-go="home">‹</button><b>Notifikasi</b><button class="link">Tandai dibaca</button></div>
+    <div class="body">
+      <button class="note new" data-go="status"><b>Dana tahap I disalurkan</b><small>SP2D-LS/4821 · Rp 70.000.000 ke rekening Bank Bengkulu</small><em>2 jam lalu</em></button>
+      <button class="note new warnc" data-go="lpj"><b>LPJ jatuh tempo 9 hari lagi</b><small>Tenggat 30 Des 2026 (Perbup Pasal 19)</small><em>Hari ini</em></button>
+      <button class="note new redc" data-go="upload"><b>Usulan dikembalikan</b><small>Catatan: surat pengesahan PJ tidak terbaca</small><em>Kemarin</em></button>
+      <button class="note" data-go="status"><b>NPHD ditandatangani</b><small>Penyaluran dapat diajukan OPD</small><em>2 Jul</em></button>
+      <button class="note" data-go="status"><b>Usulan ditetapkan Bupati</b><small>Rp 100.000.000 · Kep. 188.45/KEP/BUP/2026</small><em>15 Jun</em></button>
+    </div>
+    <nav class="tabbar"><button data-go="home">🏠<span>Beranda</span></button><button data-go="status">📄<span>Usulan</span></button><button class="on" data-go="notif">🔔<span>Notifikasi</span></button><button data-go="lpj">📘<span>LPJ</span></button></nav>
+  </div>
+</section>
+
+<!-- ============ 5. LPJ ============ -->
+<section class="phone" data-screen="lpj">
+  <div class="notch"></div>
+  <div class="screen">
+    <div class="app-bar"><button class="back" data-go="status">‹</button><b>Laporan tahap I</b><span></span></div>
+    <div class="body">
+      <div class="card tone"><small>Dana tersalur</small><b class="big">Rp 70.000.000</b><div class="row"><small>Realisasi</small><b id="real">Rp 56.000.000</b></div><div class="row"><small>Sisa dana</small><b id="sisa">Rp 14.000.000</b></div></div>
+      <label class="fld">Uraian kegiatan<textarea rows="2">Pembelian perlengkapan belajar untuk 300 siswa.</textarea></label>
+      <h3>Rincian realisasi</h3>
+      <div class="card"><div class="row"><b>Belanja perlengkapan belajar</b><b>Rp 56.000.000</b></div><small>12 Jun 2026 · KW-001</small></div>
+      <button class="btn out">＋ Tambah baris realisasi</button>
+      <div class="doc ok"><span>✔</span><div><b>Bukti pengeluaran *</b><small>bukti.pdf</small></div><em>Terunggah</em></div>
+      <div class="doc ok"><span>✔</span><div><b>Dokumentasi kegiatan *</b><small>3 foto</small></div><em>Terunggah</em></div>
+      <button class="btn" data-go="done">Ajukan laporan tahap I</button>
+      <p class="hint">Setelah diperiksa OPD, penyaluran tahap II (30%) terbuka otomatis.</p>
+    </div>
+    <nav class="tabbar"><button data-go="home">🏠<span>Beranda</span></button><button data-go="status">📄<span>Usulan</span></button><button data-go="notif">🔔<span>Notifikasi</span></button><button class="on" data-go="lpj">📘<span>LPJ</span></button></nav>
+  </div>
+</section>
+
+<!-- ============ 6. VERIFIKASI (OPD) ============ -->
+<section class="phone" data-screen="verify" data-role-only="opd">
+  <div class="notch"></div>
+  <div class="screen">
+    <div class="app-bar"><button class="back" data-go="home">‹</button><b>Verifikasi administrasi</b><span></span></div>
+    <div class="body">
+      <div class="card"><b>Pelatihan Guru Penggerak</b><small>EH/2026/DISDIKBUD/0007 · Yayasan Cahaya Bangsa · Rp 120.000.000</small></div>
+      <h3>Checklist kriteria hibah (Pasal 2)</h3>
+      <label class="chk"><input type="checkbox" checked> Peruntukan spesifik</label>
+      <label class="chk"><input type="checkbox" checked> Tidak wajib & mengikat</label>
+      <label class="chk"><input type="checkbox" checked> Tidak rutin / pengecualian beralasan</label>
+      <label class="chk"><input type="checkbox" checked> Bermanfaat bagi daerah</label>
+      <label class="chk"><input type="checkbox" id="c5"> Penerima memenuhi syarat kategori</label>
+      <label class="chk"><input type="checkbox" checked> Bersedia menandatangani NPHD</label>
+      <h3>Dokumen (8 / 9 sesuai)</h3>
+      <div class="doc ok"><span>✔</span><div><b>Proposal</b></div><em>Sesuai</em></div>
+      <div class="doc bad"><span>!</span><div><b>Surat pengesahan PJ</b><small>Tidak terbaca</small></div><em>Tolak</em></div>
+      <div class="row2"><button class="btn out danger" data-go="home">Kembalikan</button><button class="btn" id="pass">Lulus</button></div>
+      <p class="hint" id="vhint">Lulus aktif setelah semua kriteria dan dokumen sesuai.</p>
+    </div>
+    <nav class="tabbar"><button data-go="home">🏠<span>Beranda</span></button><button class="on" data-go="verify">✅<span>Antrean</span></button><button data-go="notif">🔔<span>Notifikasi</span></button><button data-go="status">📄<span>Usulan</span></button></nav>
+  </div>
+</section>
+
+<section class="phone" data-screen="done" hidden>
+  <div class="notch"></div>
+  <div class="screen center">
+    <div class="ok-big">✔</div><h2>Laporan terkirim</h2><p>OPD akan memeriksa laporan tahap I. Anda akan diberi tahu lewat notifikasi.</p>
+    <button class="btn" data-go="home">Kembali ke beranda</button>
+  </div>
+</section>
+
+</main>
+<script src="mobile.js"></script>
+</body>
+</html>
